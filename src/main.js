@@ -11,11 +11,15 @@ require(`./themes/app.${__THEME}.styl`)
 // require(`quasar/dist/quasar.ie.${__THEME}.css`)
 
 import Vue from 'vue'
-import Quasar from 'quasar'
+import Quasar, * as All from 'quasar'
+import store from './store'
 import router from './router'
 
 Vue.config.productionTip = false
-Vue.use(Quasar) // Install Quasar Framework
+Vue.use(Quasar, {
+  components: All,
+  directives: All
+}) // Install Quasar Framework
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
@@ -29,6 +33,7 @@ Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
     el: '#q-app',
+    store,
     router,
     render: h => h(require('./App').default)
   })

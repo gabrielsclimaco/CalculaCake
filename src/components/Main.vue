@@ -2,28 +2,15 @@
  q-layout(ref='layout', view='lHh Lpr fff', :left-class="{'bg-grey-2': true}")
   q-toolbar(slot='header').toolbar
     q-toolbar-title.toolbar-title
-      img(src='../statics/logo.png').logo
+      img(src='../statics/logo.png' alt='cupcake').logo
       span.title-label CalculaCake
   div
     router-view
 </template>
 
 <script>
-import {
-  QLayout,
-  QToolbar,
-  QToolbarTitle,
-  QBtn,
-  QIcon
-} from 'quasar'
-
 export default {
   components: {
-    QLayout,
-    QToolbar,
-    QToolbarTitle,
-    QBtn,
-    QIcon
   },
   data () {
     return {
