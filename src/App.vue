@@ -12,4 +12,12 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+.q-input-target {
+  color: white;
+}
+.gradient {
+  background: linear-gradient(45deg, #ddd6f3, #faaca8);
+  color: white;
+}
+</style>

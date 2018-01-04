@@ -3,13 +3,16 @@ div#home
   div.no-items.full-height
     span.no-items-message Você não adicionou nenhum produto ainda
   div.items
-  q-btn(icon='ion-ios-plus-empty' round push).add-button
+  add-product
 </template>
 
 <script>
+import AddProduct from './AddProduct'
+
 export default {
   name: 'home',
   components: {
+    AddProduct
   },
   async beforeRouteEnter (to, from, next) {
     try {
@@ -44,13 +47,5 @@ export default {
   text-align: center;
   font-size: 1.5em;
   color: #a4a4a4;
-}
-.add-button {
-  background: linear-gradient(45deg, #ddd6f3, #faaca8);
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 15px;
-  color: white;
 }
 </style>
