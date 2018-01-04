@@ -6,3 +6,5 @@ npm-debug.log*
 cordova/platforms
 cordova/plugins
 yarn.lock
+.vscode
+package-lock.json
