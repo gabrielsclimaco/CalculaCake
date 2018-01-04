@@ -29,6 +29,11 @@ export default new VueRouter({
       path: '/',
       component: load('Main'),
       children: [
+        {
+          path: '/',
+          name: 'Home',
+          component: load('Home')
+        }
       ]
     },
 

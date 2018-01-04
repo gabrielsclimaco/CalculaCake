@@ -25,15 +25,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .logo {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 .toolbar-title {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 .title-label {
   font-size: 1.5em;
