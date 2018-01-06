@@ -1,11 +1,6 @@
 <template lang="pug">
 div#add-product
-  q-btn(
-    @click='open = true'
-    icon='add'
-    round
-    push
-  ).add-button.gradient
+  fab(@click='open = true')
   q-modal(v-model='open' ref='formModal')
     q-modal-layout
       q-toolbar(slot='header').toolbar.gradient
@@ -28,24 +23,25 @@ div#add-product
       div
         div
           //- q-input()
-        div.action-buttons.full-width
-          q-btn(
-            @click='$refs.formModal.close()'
-          ).gradient Cancelar
-          q-btn(
-            @click='$refs.formModal.close()'
-          ).gradient Adicionar
+        action-buttons(
+          :buttons='buttons'
+          @adicionar='$refs.formModal.close()'
+          @cancelar='$refs.formModal.close()'
+        )
 </template>
 
 <script>
+import Fab from './AddProduct/Fab'
+import ActionButtons from './AddProduct/ActionButtons'
+
 export default {
   name: 'add-product',
   components: {
+    Fab,
+    ActionButtons
   },
   async beforeRouteEnter (to, from, next) {
     try {
-      // await Do something before router PUSH
-      // next(vm => vm.foo = bar)
       next()
     }
     catch (err) {
@@ -62,7 +58,11 @@ export default {
         price: 0,
         quantity: 0,
         howMuchUsed: 0
-      }
+      },
+      buttons: [
+        'cancelar',
+        'adicionar'
+      ]
     }
   },
   computed: {
@@ -73,12 +73,6 @@ export default {
 </script>
 
 <style scoped>
-.add-button {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 15px;
-}
 .toolbar {
   display: flex;
   flex-direction: column;
@@ -100,12 +94,5 @@ export default {
 .name-input {
   margin: 0 20px 0 10px;
   color: white !important;
-}
-.action-buttons {
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-around;
 }
 </style>
