@@ -1,18 +1,18 @@
 <template lang="pug">
 div#home
   div.no-items.full-height
-    span.no-items-message Você não adicionou nenhum produto ainda
+    span.no-items-message Você não adicionou nenhum doce ainda
   div.items
-  add-product
+  add-candy
 </template>
 
 <script>
-import AddProduct from './AddProduct'
+import AddCandy from './AddCandy'
 
 export default {
   name: 'home',
   components: {
-    AddProduct
+    AddCandy
   },
   async beforeRouteEnter (to, from, next) {
     try {

@@ -5,6 +5,7 @@ q-btn(
     icon='add'
     round
     push
+    :class='positions'
   ).add-button.gradient
 </template>
 
@@ -24,6 +25,9 @@ export default {
     }
   },
   props: {
+    positions: {
+      type: Array
+    }
   },
   data () {
     return {}
@@ -38,8 +42,20 @@ export default {
 <style scoped>
 .add-button {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  /* right: 0;
+  bottom: 0; */
   margin: 15px;
+}
+.right {
+  right: 0;
+}
+.left {
+  left: 0;
+}
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
 }
 </style>
